@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>계산기</title>
+	<style>
+		input[type="button"] {
+			background-color: white;
+			color: black;
+			border: none;
+			padding: 10px 24px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" id="result" disabled>
+	</div>
+	<div>
+		<input type="button" value="1" onclick="appendValue(1)">
+		<input type="button" value="2" onclick="appendValue(2)">
+		<input type="button" value="3" onclick="appendValue(3)">
+		<input type="button" value="+" onclick="appendValue('+')">
+	</div>
+	<div>
+		<input type="button" value="4" onclick="appendValue(4)">
+		<input type="button" value="5" onclick="appendValue(5)">
+		<input type="button" value="6" onclick="appendValue(6)">
+		<input type="button" value="-" onclick="appendValue('-')">
+	</div>
+	<div>
+		<input type="button" value="7" onclick="appendValue(7)">
+		<input type="button" value="8" onclick="appendValue(8)">
+		<input type="button" value="9" onclick="appendValue(9)">
+		<input type="button" value="*" onclick="appendValue('*')">
+	</div>
+	<div>
+		<input type="button" value="0" onclick="appendValue(0)">
+		<input type="button" value="C" onclick="clearValue()">
+		<input type="button" value="=" onclick="calculate()">
+		<input type="button" value="/" onclick="appendValue('/')">
+	</div>
+	<script>
+		function appendValue(value) {
+			document.getElementById('result').value += value;
+		}
+
+		function clearValue() {
+			document.getElementById('result').value = '';
+		}
+
+		function calculate() {
+			var result = eval(document.getElementById('result').value);
+			document.getElementById('result').value = result;
+		}
+	</script>
+</body>
+</html>
